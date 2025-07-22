@@ -1,0 +1,60 @@
+
+.board {
+  display: inline-block;
+  border: 8px solid #5d4037;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: #5d4037;
+  position: relative;
+}
+
+.board::before {
+  content: '8\a 7\a 6\a 5\a 4\a 3\a 2\a 1';
+  white-space: pre;
+  position: absolute;
+  left: -25px;
+  top: 10px;
+  font-weight: bold;
+  color: #5d4037;
+  text-align: right;
+  line-height: 70px;
+  font-size: 12px;
+}
+
+.board::after {
+  content: 'a\a b\a c\a d\a e\a f\a g\a h';
+  white-space: pre;
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+  font-weight: bold;
+  color: #5d4037;
+  line-height: 70px;
+  font-size: 12px;
+}
+
+.row {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .board {
+    transform: scale(0.9);
+  }
+  
+  .board::before {
+    left: -20px;
+    line-height: 45px;
+  }
+  
+  .board::after {
+    bottom: -20px;
+    line-height: 45px;
+  }
+}
+
+@media (max-width: 400px) {
+  .board {
+    transform: scale(0.8);
+  }
+}
